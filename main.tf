@@ -15,16 +15,10 @@ provider "esxi" {
   esxi_password  = var.esxi_password
 }
 
-resource "esxi_guest" "vmtest" {
+resource "esxi_guest" "rancher" {
   guest_name         = "vmtest"
-  disk_store         = "MyDiskStore"
-
-  #
-  #  Specify an existing guest to clone, an ovf source, or neither to build a bare-metal guest vm.
-  #
-  #clone_from_vm      = "Templates/centos7"
-  #ovf_source        = "/local_path/centos-7.vmx"
-
+  disk_store         = "datastore1"
+  clone_from_vm      = "rancher"
   network_interfaces {
     virtual_network = "VM Network"
   }
