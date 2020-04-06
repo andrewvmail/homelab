@@ -1,0 +1,5 @@
+# cp terraform.tfvars.example terraform.tfvars
+esxi_hostname = "192.168.1.2"
+esxi_hostport = "22"
+esxi_username = "root"
+# esxi_password = "password" # comment this to prompt password
