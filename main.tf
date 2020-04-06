@@ -16,10 +16,41 @@ provider "esxi" {
 }
 
 resource "esxi_guest" "rancher" {
-  guest_name         = "vmtest"
+  guest_name         = "rancher"
   disk_store         = "datastore1"
-  clone_from_vm      = "rancher"
+  clone_from_vm      = "deb"
   network_interfaces {
     virtual_network = "VM Network"
+    nic_type = "vmxnet3"
+  }
+}
+
+resource "esxi_guest" "rancher1" {
+  guest_name         = "rancher1"
+  disk_store         = "datastore1"
+  clone_from_vm      = "deb"
+  network_interfaces {
+    virtual_network = "VM Network"
+    nic_type = "vmxnet3"
+  }
+}
+
+resource "esxi_guest" "rancher2" {
+  guest_name         = "rancher2"
+  disk_store         = "datastore1"
+  clone_from_vm      = "deb"
+  network_interfaces {
+    virtual_network = "VM Network"
+    nic_type = "vmxnet3"
+  }
+}
+
+resource "esxi_guest" "rancher3" {
+  guest_name         = "rancher3"
+  disk_store         = "datastore1"
+  clone_from_vm      = "deb"
+  network_interfaces {
+    virtual_network = "VM Network"
+    nic_type = "vmxnet3"
   }
 }
