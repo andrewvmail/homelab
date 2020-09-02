@@ -17,3 +17,4 @@ sudo cp terraform-provider-esxi_`cat version` /usr/local/bin
 sudo cp terraform-provider-esxi_`cat version`  ~/.terraform.d/plugins/
 
 wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.5.0-amd64-netinst.iso
+# take this file and prepare a vm in esxi call it deb for terraform to use a base image
