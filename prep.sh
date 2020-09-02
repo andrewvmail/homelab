@@ -15,3 +15,5 @@ CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -a -ldflags '-w -extldflags "-st
 
 sudo cp terraform-provider-esxi_`cat version` /usr/local/bin
 sudo cp terraform-provider-esxi_`cat version`  ~/.terraform.d/plugins/
+
+wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-10.5.0-amd64-netinst.iso

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "PermitRootLogin without-password" >> /etc/ssh/sshd_config
+echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 
 /etc/init.d/ssh restart
 
@@ -8,7 +8,7 @@ apt-get upgrade
 
 apt-get update
 
-apt install apt-transport-https ca-certificates curl software-properties-common gnupg2
+apt install -y apt-transport-https ca-certificates curl software-properties-common gnupg2
 
 curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
 
@@ -16,4 +16,8 @@ add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(
 
 apt update
 
-apt install docker.io
+apt install -y docker.io
+
+docker run -d --restart=unless-stopped \
+  -p 80:80 -p 443:443 \
+  rancher/rancher:latest
